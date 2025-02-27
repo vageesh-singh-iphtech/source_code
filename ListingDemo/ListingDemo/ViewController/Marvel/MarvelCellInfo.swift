@@ -30,8 +30,8 @@ class MarvelCellInfo: UITableViewCell {
         super.draw(rect)
         
         viewContent.layer.cornerRadius  = 5
-        viewContent.layer.borderColor = UIColor.black.cgColor
-        viewContent.layer.borderWidth = 1
+        viewContent.layer.borderColor = UIColor.blue.cgColor
+        viewContent.layer.borderWidth = 3
         viewContent.layer.masksToBounds = true
         
         submit_btn.layer.cornerRadius = 5

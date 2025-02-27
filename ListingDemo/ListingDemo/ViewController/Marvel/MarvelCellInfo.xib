@@ -98,7 +98,7 @@
                 <outlet property="weakness" destination="8l9-3S-WPJ" id="8rR-6M-uCF"/>
                 <outlet property="xFactor" destination="o7H-o2-TOt" id="hua-tB-OG0"/>
             </connections>
-            <point key="canvasLocation" x="76" y="77"/>
+            <point key="canvasLocation" x="111" y="47"/>
         </tableViewCell>
     </objects>
     <resources>

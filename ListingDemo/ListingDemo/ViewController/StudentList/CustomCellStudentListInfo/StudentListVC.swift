@@ -21,10 +21,10 @@ class StudentListVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
     
     func studentList(){
         
-      /*  arrStudentList =  UserDefaults.standard.value(forKey:"keyStudentList") as? [[String:String]] ?? []
-        
-       */
+        arrStudentList =  UserDefaults.standard.value(forKey:"keyStudentList") as? [[String:String]] ?? []
+       
          
+        /*
         arrStudentList = [
                            [
                             "name" : "Sujoy Bose",
@@ -53,7 +53,7 @@ class StudentListVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
                    
                         ]
         
-         
+         */
     }
     
     func setUpTableView(){
@@ -85,11 +85,12 @@ class StudentListVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
         cell.lblStudentDept.text =  self.arrStudentList[indexPath.row]["Dept"]
         cell.lblStudentAddress.text =  self.arrStudentList[indexPath.row]["Address"]
         
-       
-      //  cell.lblFruitsName.text =  self.arrFruitsName[indexPath.row]
+        cell.btnRefEdit.addTarget(self, action: #selector(editStudentFun(_:)), for: .touchUpInside)
+        cell.btnRefEdit.tag = Int(indexPath.row)
         
-      // cell.btnRefRemove.addTarget(self, action: #selector(deleteFruitFun(_:)), for: .touchUpInside)
-     //  cell.btnRefRemove.tag = Int(indexPath.row)
+       cell.btnRefDelete.addTarget(self, action: #selector(deleteStudentFun(_:)), for: .touchUpInside)
+       cell.btnRefDelete.tag = Int(indexPath.row)
+        
         
         
         cell.selectionStyle = .none
@@ -98,6 +99,30 @@ class StudentListVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 160
+    }
+    
+    @objc func deleteStudentFun(_ sender: UIButton) {
+        let senderTag = Int(sender.tag)
+        print(" senderTag senderTag senderTag ",senderTag)
+        
+        self.arrStudentList.remove(at: senderTag)
+        UserDefaults.standard.setValue(self.arrStudentList, forKey:"keyStudentList")
+        self.tblStudentList.reloadData()
+        
+        
+    }
+    
+    @objc func editStudentFun(_ sender: UIButton) {
+        let senderTag = Int(sender.tag)
+        print(" senderTag senderTag senderTag ",senderTag)
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateListVC") as! CreateListVC
+        vc.studentInfo =  arrStudentList[senderTag]
+        vc.selIndex = senderTag
+        vc.isEdit = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    
+        
     }
     
 
