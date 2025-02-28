@@ -91,6 +91,7 @@ class CreateListVC: UIViewController,UITextViewDelegate {
                       ]
         
         var arrStudentList =  UserDefaults.standard.value(forKey:"keyStudentList") as? [[String:String]] ?? []
+        
         arrStudentList.insert(dictStudent, at: selIndex)
         UserDefaults.standard.setValue(arrStudentList, forKey:"keyStudentList")
         
