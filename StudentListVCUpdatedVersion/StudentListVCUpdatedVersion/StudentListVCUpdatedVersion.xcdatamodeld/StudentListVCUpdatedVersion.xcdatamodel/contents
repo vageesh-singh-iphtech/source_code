@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21H1320" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="EmployeeList" representedClassName="EmployeeList" syncable="YES" codeGenerationType="class">
+        <attribute name="ename" optional="YES" attributeType="String"/>
+        <attribute name="eRoll" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Studentlist" representedClassName="Studentlist" syncable="YES">
+        <attribute name="rollNo" optional="YES" attributeType="String"/>
+        <attribute name="stuAddress" optional="YES" attributeType="String"/>
+        <attribute name="stuDept" optional="YES" attributeType="String"/>
+        <attribute name="studName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SubjectList" representedClassName="SubjectList" syncable="YES" codeGenerationType="class">
+        <attribute name="subName" optional="YES" attributeType="String"/>
+    </entity>
+</model>
