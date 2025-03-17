@@ -21,6 +21,7 @@
 		0B20423B2D787B85004D01FD /* StudentCoreDataAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20423A2D787B85004D01FD /* StudentCoreDataAppUITestsLaunchTests.swift */; };
 		0B20424C2D787CC1004D01FD /* StudentHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20424B2D787CC1004D01FD /* StudentHomeVC.swift */; };
 		0B20424E2D787EE3004D01FD /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20424D2D787EE3004D01FD /* CreateVC.swift */; };
+		0B58C69C2D82D6970098C4AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58C69B2D82D6970098C4AA /* LoginVC.swift */; };
 		0B7406532D7969F8004AF1B2 /* StudentCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7406512D7969F8004AF1B2 /* StudentCustomCell.swift */; };
 		0B7406542D7969F8004AF1B2 /* StudentCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7406522D7969F8004AF1B2 /* StudentCustomCell.xib */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		0B20423A2D787B85004D01FD /* StudentCoreDataAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoreDataAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0B20424B2D787CC1004D01FD /* StudentHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeVC.swift; sourceTree = "<group>"; };
 		0B20424D2D787EE3004D01FD /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		0B58C69B2D82D6970098C4AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0B7406512D7969F8004AF1B2 /* StudentCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCustomCell.swift; sourceTree = "<group>"; };
 		0B7406522D7969F8004AF1B2 /* StudentCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				0B2042222D787B84004D01FD /* LaunchScreen.storyboard */,
 				0B2042252D787B84004D01FD /* Info.plist */,
 				0B20421D2D787B80004D01FD /* StudentCoreDataApp.xcdatamodeld */,
+				0B58C69B2D82D6970098C4AA /* LoginVC.swift */,
 			);
 			path = StudentCoreDataApp;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				0B007FB72D799DDC00E05FF1 /* StudentList+CoreDataClass.swift in Sources */,
 				0B7406532D7969F8004AF1B2 /* StudentCustomCell.swift in Sources */,
 				0B007FB82D799DDC00E05FF1 /* StudentList+CoreDataProperties.swift in Sources */,
+				0B58C69C2D82D6970098C4AA /* LoginVC.swift in Sources */,
 				0B2042152D787B80004D01FD /* AppDelegate.swift in Sources */,
 				0B20421F2D787B80004D01FD /* StudentCoreDataApp.xcdatamodeld in Sources */,
 				0B2042172D787B80004D01FD /* SceneDelegate.swift in Sources */,
