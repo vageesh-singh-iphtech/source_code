@@ -1,19 +1,20 @@
 //
-//  LoginVC.swift
+//  SignupVC.swift
 //  StudentCoreDataApp
 //
-//  Created by iPHTech 35 on 13/03/25.
+//  Created by iPHTech 35 on 17/03/25.
 //
 
 import UIKit
 
-class LoginVC: UIViewController {
+class SignupVC: UIViewController {
     
     
-    @IBOutlet weak var loginUserNameTxt: UITextField!
+    @IBOutlet weak var txtusername: UITextField!
     
-    @IBOutlet weak var loginPassWordTxt: UITextField!
+    @IBOutlet weak var txtemail: UITextField!
     
+    @IBOutlet weak var txtpassword: UITextField!
     
     
     override func viewDidLoad() {
@@ -22,15 +23,17 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func loginBtnClick(_ sender: Any) {
-        guard let username = loginUserNameTxt.text, !username.isEmpty,
-                      let password = loginPassWordTxt.text, !password.isEmpty else {
-                    showAlert(title: "Error", message: "Please enter both username and password.")
-                    return
-    }
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+            // Validate input fields
+            guard let username = txtusername.text, !username.isEmpty,
+                  let email = txtemail.text, !email.isEmpty,
+                  let password = txtpassword.text, !password.isEmpty else {
+                showAlert(title: "Error", message: "All fields are required.")
+                return
+            }
         
-        // Set the API URL
-                guard let url = URL(string: "http://localhost:8080/api/auth/login") else {
+        // Create URL
+                guard let url = URL(string: "http://localhost:8080/api/auth/register") else {
                     showAlert(title: "Error", message: "Invalid URL")
                     return
                 }
@@ -39,9 +42,10 @@ class LoginVC: UIViewController {
                 request.httpMethod = "POST"
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 
-                // Prepare JSON payload for login
+                // Prepare JSON body for registration
                 let json: [String: Any] = [
                     "username": username,
+                    "email": email,
                     "password": password
                 ]
                 
@@ -54,7 +58,7 @@ class LoginVC: UIViewController {
                 }
                 
                 let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                    // Handle error
+                    // Handle errors
                     if let error = error {
                         DispatchQueue.main.async {
                             self.showAlert(title: "Error", message: error.localizedDescription)
@@ -62,7 +66,7 @@ class LoginVC: UIViewController {
                         return
                     }
                     
-                    // Ensure data is received
+                    // Ensure data was received
                     guard let data = data else {
                         DispatchQueue.main.async {
                             self.showAlert(title: "Error", message: "No data received")
@@ -72,44 +76,26 @@ class LoginVC: UIViewController {
                     
                     do {
                         if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                            print("Login Response: \(jsonResponse)")
+                            print("Signup Response: \(jsonResponse)")
                             
                             let isSuccess = jsonResponse["isSuccess"] as? Bool ?? false
                             let message = jsonResponse["message"] as? String ?? "No message"
                             
                             DispatchQueue.main.async {
                                 if isSuccess {
-                                    if let dataDict = jsonResponse["data"] as? [String: Any],
-                                       let idValue = dataDict["id"] {
-                                        // Safely convert the ID to an Int (handling possible types)
-                                        let userId: Int? = {
-                                            if let idInt = idValue as? Int {
-                                                return idInt
-                                            } else if let idNumber = idValue as? NSNumber {
-                                                return idNumber.intValue
-                                            } else if let idStr = idValue as? String, let idInt = Int(idStr) {
-                                                return idInt
-                                            }
-                                            return nil
-                                        }()
-                                        
-                                        if let userId = userId {
-                                            // Navigate to ProfileVC with the userId
-                                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                            if let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
-                                                profileVC.userId = userId
-                                                self.navigationController?.pushViewController(profileVC, animated: true)
-                                            } else {
-                                                self.showAlert(title: "Navigation Error", message: "Unable to find Profile page.")
-                                            }
+                                    // Show a success alert and navigate to LoginVC on OK tap.
+                                    let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+                                    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                        if let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+                                            self.navigationController?.pushViewController(loginVC, animated: true)
                                         } else {
-                                            self.showAlert(title: "Login Error", message: "Invalid user data received.")
+                                            self.showAlert(title: "Navigation Error", message: "Unable to find the Login page.")
                                         }
-                                    } else {
-                                        self.showAlert(title: "Login Error", message: "Invalid user data received.")
-                                    }
+                                    }))
+                                    self.present(alertController, animated: true, completion: nil)
                                 } else {
-                                    self.showAlert(title: "Login Failed", message: message)
+                                    self.showAlert(title: "Error", message: message)
                                 }
                             }
                         }
@@ -130,3 +116,43 @@ class LoginVC: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
+
+/*
+
+{
+    "data": {
+         "userId" : "1001"
+        "username": "shivam",
+        "email": "shivam@text.ok"
+    },
+    "message": "Logged in successfully",
+    "isSuccess": true
+ 
+    
+}
+ {
+     "data": {
+          "userId" : 1003
+         "username": "shivam",
+         "email": "shivam@text.ok"
+     },
+     "message": "Logged in successfully",
+     "isSuccess": true
+  
+     
+ }
+
+
+struct LoginRes : Codable{
+    let message : String
+    let isSuccess : String
+    let data : LoginData?
+}
+
+struct LoginData : Codable{
+  //  let userId : String
+    let username : String
+    let email : String
+}
+*/
+  

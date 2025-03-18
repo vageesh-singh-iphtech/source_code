@@ -21,7 +21,12 @@
 		0B20423B2D787B85004D01FD /* StudentCoreDataAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20423A2D787B85004D01FD /* StudentCoreDataAppUITestsLaunchTests.swift */; };
 		0B20424C2D787CC1004D01FD /* StudentHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20424B2D787CC1004D01FD /* StudentHomeVC.swift */; };
 		0B20424E2D787EE3004D01FD /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20424D2D787EE3004D01FD /* CreateVC.swift */; };
+		0B2CF4B12D8839290089598D /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2CF4B02D8839290089598D /* SignupVC.swift */; };
+		0B2CF4B92D8853F40089598D /* ApiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2CF4B72D8853F40089598D /* ApiCell.swift */; };
+		0B2CF4BA2D8853F40089598D /* ApiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2CF4B82D8853F40089598D /* ApiCell.xib */; };
 		0B58C69C2D82D6970098C4AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58C69B2D82D6970098C4AA /* LoginVC.swift */; };
+		0B6307E32D8999BA004C386F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6307E22D8999BA004C386F /* ProfileVC.swift */; };
+		0B65F6902D87E00600FE63EB /* ApiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B65F68F2D87E00600FE63EB /* ApiVC.swift */; };
 		0B7406532D7969F8004AF1B2 /* StudentCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7406512D7969F8004AF1B2 /* StudentCustomCell.swift */; };
 		0B7406542D7969F8004AF1B2 /* StudentCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7406522D7969F8004AF1B2 /* StudentCustomCell.xib */; };
 /* End PBXBuildFile section */
@@ -62,7 +67,12 @@
 		0B20423A2D787B85004D01FD /* StudentCoreDataAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoreDataAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0B20424B2D787CC1004D01FD /* StudentHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeVC.swift; sourceTree = "<group>"; };
 		0B20424D2D787EE3004D01FD /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		0B2CF4B02D8839290089598D /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		0B2CF4B72D8853F40089598D /* ApiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCell.swift; sourceTree = "<group>"; };
+		0B2CF4B82D8853F40089598D /* ApiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApiCell.xib; sourceTree = "<group>"; };
 		0B58C69B2D82D6970098C4AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0B6307E22D8999BA004C386F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		0B65F68F2D87E00600FE63EB /* ApiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiVC.swift; sourceTree = "<group>"; };
 		0B7406512D7969F8004AF1B2 /* StudentCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCustomCell.swift; sourceTree = "<group>"; };
 		0B7406522D7969F8004AF1B2 /* StudentCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +130,7 @@
 		0B2042082D787B80004D01FD = {
 			isa = PBXGroup;
 			children = (
+				0B65F6912D87E04500FE63EB /* Modals */,
 				0B007FA62D79827200E05FF1 /* CoreData */,
 				0B2042472D787C5F004D01FD /* ViewControllers */,
 				0B2042132D787B80004D01FD /* StudentCoreDataApp */,
@@ -151,6 +162,8 @@
 				0B2042252D787B84004D01FD /* Info.plist */,
 				0B20421D2D787B80004D01FD /* StudentCoreDataApp.xcdatamodeld */,
 				0B58C69B2D82D6970098C4AA /* LoginVC.swift */,
+				0B2CF4B02D8839290089598D /* SignupVC.swift */,
+				0B6307E22D8999BA004C386F /* ProfileVC.swift */,
 			);
 			path = StudentCoreDataApp;
 			sourceTree = "<group>";
@@ -175,6 +188,7 @@
 		0B2042472D787C5F004D01FD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0B65F68E2D87DFDA00FE63EB /* ApiCallingVC */,
 				0B20424A2D787C8F004D01FD /* CreateStudentVC */,
 				0B2042492D787C80004D01FD /* StudentCustomCell */,
 				0B2042482D787C72004D01FD /* StudentVC */,
@@ -205,6 +219,31 @@
 				0B20424D2D787EE3004D01FD /* CreateVC.swift */,
 			);
 			path = CreateStudentVC;
+			sourceTree = "<group>";
+		};
+		0B2CF4B22D8852220089598D /* ApiCustCell */ = {
+			isa = PBXGroup;
+			children = (
+				0B2CF4B72D8853F40089598D /* ApiCell.swift */,
+				0B2CF4B82D8853F40089598D /* ApiCell.xib */,
+			);
+			path = ApiCustCell;
+			sourceTree = "<group>";
+		};
+		0B65F68E2D87DFDA00FE63EB /* ApiCallingVC */ = {
+			isa = PBXGroup;
+			children = (
+				0B2CF4B22D8852220089598D /* ApiCustCell */,
+				0B65F68F2D87E00600FE63EB /* ApiVC.swift */,
+			);
+			path = ApiCallingVC;
+			sourceTree = "<group>";
+		};
+		0B65F6912D87E04500FE63EB /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +352,7 @@
 			files = (
 				0B7406542D7969F8004AF1B2 /* StudentCustomCell.xib in Resources */,
 				0B2042242D787B84004D01FD /* LaunchScreen.storyboard in Resources */,
+				0B2CF4BA2D8853F40089598D /* ApiCell.xib in Resources */,
 				0B2042212D787B84004D01FD /* Assets.xcassets in Resources */,
 				0B20421C2D787B80004D01FD /* Main.storyboard in Resources */,
 			);
@@ -339,9 +379,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2CF4B12D8839290089598D /* SignupVC.swift in Sources */,
+				0B2CF4B92D8853F40089598D /* ApiCell.swift in Sources */,
+				0B6307E32D8999BA004C386F /* ProfileVC.swift in Sources */,
 				0B2042192D787B80004D01FD /* ViewController.swift in Sources */,
 				0B007FB72D799DDC00E05FF1 /* StudentList+CoreDataClass.swift in Sources */,
 				0B7406532D7969F8004AF1B2 /* StudentCustomCell.swift in Sources */,
+				0B65F6902D87E00600FE63EB /* ApiVC.swift in Sources */,
 				0B007FB82D799DDC00E05FF1 /* StudentList+CoreDataProperties.swift in Sources */,
 				0B58C69C2D82D6970098C4AA /* LoginVC.swift in Sources */,
 				0B2042152D787B80004D01FD /* AppDelegate.swift in Sources */,
