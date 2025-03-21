@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B007FB72D799DDC00E05FF1 /* StudentList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B007FB52D799DDC00E05FF1 /* StudentList+CoreDataClass.swift */; };
 		0B007FB82D799DDC00E05FF1 /* StudentList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B007FB62D799DDC00E05FF1 /* StudentList+CoreDataProperties.swift */; };
+		0B037FF22D8BD86A00D41E03 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037FF12D8BD86A00D41E03 /* APIModels.swift */; };
+		0B037FF42D8BE32E00D41E03 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037FF32D8BE32E00D41E03 /* Loader.swift */; };
 		0B2042152D787B80004D01FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2042142D787B80004D01FD /* AppDelegate.swift */; };
 		0B2042172D787B80004D01FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2042162D787B80004D01FD /* SceneDelegate.swift */; };
 		0B2042192D787B80004D01FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2042182D787B80004D01FD /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		0B007FB52D799DDC00E05FF1 /* StudentList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudentList+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0B007FB62D799DDC00E05FF1 /* StudentList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudentList+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0B037FF12D8BD86A00D41E03 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		0B037FF32D8BE32E00D41E03 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		0B2042112D787B80004D01FD /* StudentCoreDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentCoreDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2042142D787B80004D01FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B2042162D787B80004D01FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,9 +131,22 @@
 			path = StudentCDM;
 			sourceTree = "<group>";
 		};
+		0B037FF02D8BD80B00D41E03 /* ApiDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0B58C69B2D82D6970098C4AA /* LoginVC.swift */,
+				0B2CF4B02D8839290089598D /* SignupVC.swift */,
+				0B6307E22D8999BA004C386F /* ProfileVC.swift */,
+				0B037FF12D8BD86A00D41E03 /* APIModels.swift */,
+				0B037FF32D8BE32E00D41E03 /* Loader.swift */,
+			);
+			path = ApiDemo;
+			sourceTree = "<group>";
+		};
 		0B2042082D787B80004D01FD = {
 			isa = PBXGroup;
 			children = (
+				0B037FF02D8BD80B00D41E03 /* ApiDemo */,
 				0B65F6912D87E04500FE63EB /* Modals */,
 				0B007FA62D79827200E05FF1 /* CoreData */,
 				0B2042472D787C5F004D01FD /* ViewControllers */,
@@ -161,9 +178,6 @@
 				0B2042222D787B84004D01FD /* LaunchScreen.storyboard */,
 				0B2042252D787B84004D01FD /* Info.plist */,
 				0B20421D2D787B80004D01FD /* StudentCoreDataApp.xcdatamodeld */,
-				0B58C69B2D82D6970098C4AA /* LoginVC.swift */,
-				0B2CF4B02D8839290089598D /* SignupVC.swift */,
-				0B6307E22D8999BA004C386F /* ProfileVC.swift */,
 			);
 			path = StudentCoreDataApp;
 			sourceTree = "<group>";
@@ -385,6 +399,7 @@
 				0B2042192D787B80004D01FD /* ViewController.swift in Sources */,
 				0B007FB72D799DDC00E05FF1 /* StudentList+CoreDataClass.swift in Sources */,
 				0B7406532D7969F8004AF1B2 /* StudentCustomCell.swift in Sources */,
+				0B037FF22D8BD86A00D41E03 /* APIModels.swift in Sources */,
 				0B65F6902D87E00600FE63EB /* ApiVC.swift in Sources */,
 				0B007FB82D799DDC00E05FF1 /* StudentList+CoreDataProperties.swift in Sources */,
 				0B58C69C2D82D6970098C4AA /* LoginVC.swift in Sources */,
@@ -392,6 +407,7 @@
 				0B20421F2D787B80004D01FD /* StudentCoreDataApp.xcdatamodeld in Sources */,
 				0B2042172D787B80004D01FD /* SceneDelegate.swift in Sources */,
 				0B20424E2D787EE3004D01FD /* CreateVC.swift in Sources */,
+				0B037FF42D8BE32E00D41E03 /* Loader.swift in Sources */,
 				0B20424C2D787CC1004D01FD /* StudentHomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
